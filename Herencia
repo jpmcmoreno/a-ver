@@ -1,0 +1,55 @@
+package herencia;
+
+// Ejemplo de herencia 
+// creamos una clase A
+class A {
+
+    int i, j;
+
+    void showij() {
+        System.out.println("i and j: " + i + " " + j);
+    }
+}
+
+//crea una sub clase que se extienda a la clase a
+class B extends A {
+
+    int k;
+
+    void showK() {
+        System.out.println("k: " + k);
+    }
+
+    void sum() {
+        System.out.println("i+j+k: " + (i + j + k));
+    }
+}
+
+public class Herencia {
+
+    public static void main(String[] args) {
+        A superOb = new A();
+        B subOb = new B();
+        
+        //la superclase puede ser usada por si misma
+        
+        superOb.i = 10;
+        superOb.j = 20;
+        System.out.println("contenido de superOb: ");
+        superOb.showij();
+        System.out.println();
+        
+        //la subclase tiene acceso a todos los miembros publicos de la superclase
+        
+        subOb.i = 7;
+        subOb.j = 8;
+        subOb.k = 9;
+        System.out.println("contenido de subOb: ");
+        subOb.showij();
+        subOb.showK();
+        System.out.println();
+        System.out.println("suma de i, j y k en subOb: ");
+        subOb.sum();
+    }
+
+}
